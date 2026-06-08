@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['lights']
+
+roboflow:
+  workspace: project-ueizn
+  project: lights-ogz4u
+  version: dataset
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/project-ueizn/lights-ogz4u/dataset/dataset
