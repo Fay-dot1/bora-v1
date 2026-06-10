@@ -49,18 +49,19 @@ def boost_objects(img):
 
 
 # 입력 이미지 로드
-img = cv2.imread("2.png")
+if __name__ == "__main__":
+    img = cv2.imread("2.png")
 
-# 이미지가 존재하지 않을 경우 예외 처리
-if img is None:
-    raise ValueError("Image not found!")
+    # 이미지가 존재하지 않을 경우 예외 처리
+    if img is None:
+        raise ValueError("Image not found!")
 
-# 필터 적용
-output = boost_objects(img)
+    # 필터 적용
+    output = boost_objects(img)
 
-# 결과 저장 및 출력
-cv2.imwrite("boosted_objects.jpg", output)
-cv2.imshow("Object Boost", output)
+    # 결과 저장 및 출력
+    cv2.imwrite("boosted_objects.jpg", output)
+    cv2.imshow("Object Boost", output)
 
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
