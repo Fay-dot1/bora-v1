@@ -7,7 +7,7 @@ import platform
 ROOT = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(ROOT)
 
-from fog_detection_algorithms.denoise_filter.filter_v5.py import boost_objects
+from fog_detection_algorithms.denoise_filter.filter_v5 import boost_objects
 from object_detection_models.vehicle_detection.objectdetection import load_model, run_detection
 from object_detection_models.post_processing.matrix import check_proximity
 
