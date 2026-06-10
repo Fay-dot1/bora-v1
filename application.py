@@ -4,20 +4,19 @@ import sys
 import os
 import platform
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(ROOT)
 
-from denoise_filter.filter_v5 import boost_objects
-from object_detection_model.objectdetection import load_model, run_detection
-from object_detection_post_processsing.matrix_test import check_proximity
+from fog_detection_algorithms.denoise_filter.filter_v5 import boost_objects
+from object_detection_models.vehicle_detection.objectdetection import load_model, run_detection
+from object_detection_models.post_processing.matrix import check_proximity
 
-
-YOLO_WEIGHTS = os.path.join(ROOT, "yolov8_objectdetection_library", "weights", "best.pt")
+YOLO_WEIGHTS = os.path.join(ROOT, "object_detection_models", "vehicle_detection", "yolo_vehicle_model", "weights", "best.pt")
 CAMERA_INDEX = 0
 VIDEO_PATH = "/Users/fay/Downloads/test.MOV"
-DISPLAY_W    = 800
-DISPLAY_H    = 480
-IS_PI        = platform.system() == "Linux" and os.path.exists("/dev/video0")
+DISPLAY_W = 800
+DISPLAY_H = 480
+IS_PI = platform.system() == "Linux" and os.path.exists("/dev/video0")
 
 
 def draw_warning(frame, warning_level, box=None):
